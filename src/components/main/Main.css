@@ -95,6 +95,7 @@
   position: absolute;
   display: none;
 }
+
 @media screen and (max-width: 360px) {
   .SignUp {
     position: absolute;
@@ -163,6 +164,9 @@
   .Container {
     padding: none;
     position: absolute none;
+    h2 {
+      color: #fff;
+    }
   }
   .ImgContainer {
     display: none;
