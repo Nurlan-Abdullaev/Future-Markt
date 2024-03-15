@@ -13,11 +13,23 @@ import Modal from "../Modal";
 import "./Main.css";
 
 export const Main = () => {
-  const [openModal, setOpenModal] = useState(false);
+  const [openModal1, setOpenModal1] = useState(false);
+  const [openModal2, setOpenModal2] = useState(false);
 
-  function changeDeleteModalState() {
-    setOpenModal((prev) => !prev);
-    console.log("hi");
+  function openModalHandler1() {
+    setOpenModal1(true);
+  }
+
+  function openModalHandler2() {
+    setOpenModal2(true);
+  }
+
+  function closeModalHandler1() {
+    setOpenModal1(false);
+  }
+
+  function closeModalHandler2() {
+    setOpenModal2(false);
   }
   return (
     <>
@@ -30,13 +42,12 @@ export const Main = () => {
         </div>
         <div className="ContainerTelephone">
           <img
-            onClick={changeDeleteModalState}
+            onClick={openModalHandler1}
             className="Burger"
             src={Burger}
             alt="Burger"
           />
-          {openModal && <Modal closeModalHandler={changeDeleteModalState} />}
-
+          {openModal1 && <Modal closeModalHandler={closeModalHandler1} />}
           <img className="ImgTelephone" src={Telephone} alt="Telephone" />
           <h3 className="H3Hello">8-345-123-34-45</h3>
         </div>
@@ -64,20 +75,18 @@ export const Main = () => {
 
         <div className="ImgContainer">
           <img
-            onClick={changeDeleteModalState}
+            onClick={openModalHandler2}
             style={{ width: "14rem", height: "6rem" }}
             src={Rectangle}
             alt="Rectangle"
           />
           <img
-            onClick={changeDeleteModalState}
             style={{ width: "14rem", height: "6rem" }}
             src={Button}
             alt="Button"
           />
-          {openModal && <Modal closeModalHandler={changeDeleteModalState} />}
+          {openModal2 && <Modal closeModalHandler={closeModalHandler2} />}
         </div>
-
         <img className="Man" src={Man} alt="Man" />
       </div>
     </>
